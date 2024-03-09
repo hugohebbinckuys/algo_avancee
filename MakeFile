@@ -1,0 +1,22 @@
+# Règle pour lier l'exécutable
+main: main.o analyseur.o
+	gcc -o main main.o analyseur.o
+
+# Règle pour compiler main.c en main.o
+main.o: main.c analyseur.h
+	gcc -c main.c
+
+# Règle pour compiler analyseur.c en analyseur.o
+analyseur.o: analyseur.c analyseur.h
+	gcc -c analyseur.c
+
+# Règle par défaut
+all: main clean
+
+
+# Signfie que l'on veux réaliser une action et non une compilation , dans ce cas la commande clean sera executée.
+.PHONY: clean
+
+
+clean:
+	del /Q *.o
