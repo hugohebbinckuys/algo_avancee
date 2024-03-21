@@ -6,8 +6,7 @@
 int main()
 {
     amorcer("fichier_a_lire.txt");
-    lire_caractere();
-    lire_caractere();
-
+    lire_fichier(); 
+    
     return 0;
 }
